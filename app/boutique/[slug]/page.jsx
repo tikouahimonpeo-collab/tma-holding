@@ -92,11 +92,42 @@ export default function ProductPage({ params }) {
               </p>
 
               {/* Tags + dispo */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                <Badge variant="whatsapp">{product.availability}</Badge>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-tma-night text-white px-3 py-1 text-xs font-bold uppercase tracking-[0.12em]">
+                  ⚓ Import direct
+                </span>
+                <Badge>Disponible sur commande</Badge>
                 {(product.tags || []).map((t) => (
                   <Badge key={t}>{t}</Badge>
                 ))}
+              </div>
+
+              {/* Bandeau prix + délai */}
+              <div className="rounded-2xl bg-tma-night text-white p-6 mb-6 shadow-premium">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-tma-electric-200 text-[11px] font-bold tracking-[0.2em] uppercase mb-1">
+                      Tarification
+                    </p>
+                    <p className="font-display text-lg font-bold leading-tight">
+                      Prix direct usine
+                    </p>
+                    <p className="text-white/70 text-xs mt-1">
+                      Jusqu'à -40 % vs marché local
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-tma-electric-200 text-[11px] font-bold tracking-[0.2em] uppercase mb-1">
+                      Livraison
+                    </p>
+                    <p className="font-display text-lg font-bold leading-tight">
+                      45 à 50 jours
+                    </p>
+                    <p className="text-white/70 text-xs mt-1">
+                      Import sécurisé
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Avantages */}
@@ -106,10 +137,12 @@ export default function ProductPage({ params }) {
                 </p>
                 <ul className="space-y-2">
                   {[
-                    "Qualité premium sélectionnée par nos acheteurs",
-                    "Livraison rapide à Abidjan et grandes villes de Côte d'Ivoire",
+                    "Qualité professionnelle sélectionnée par nos acheteurs",
+                    "Import direct fournisseur — aucun intermédiaire",
+                    "Contrôle qualité avant expédition",
+                    "Livraison à Abidjan et grandes villes (45-50 jours)",
                     "Facture professionnelle disponible",
-                    "Installation possible par nos équipes",
+                    "Installation possible par les équipes TMA Holding",
                   ].map((a) => (
                     <li key={a} className="flex items-start gap-2 text-sm text-tma-night">
                       <IconCheck className="w-4 h-4 mt-0.5 text-tma-electric shrink-0" />
@@ -174,7 +207,7 @@ export default function ProductPage({ params }) {
       <CTASection
         eyebrow="Besoin d'un conseil ?"
         title="Notre équipe TMA Shop vous répond sur WhatsApp."
-        description="Disponibilités, quantités, délais de livraison, pose : obtenez toutes vos réponses en quelques minutes."
+        description="Disponibilités, quantités, délais d'import, pose sur chantier : obtenez toutes vos réponses directement sur WhatsApp."
       />
     </>
   );

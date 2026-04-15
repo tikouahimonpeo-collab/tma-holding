@@ -176,11 +176,11 @@ export default function HomePage() {
                 <IconShop className="w-4 h-4" /> TMA Shop · E-commerce BTP
               </p>
               <h2 className="font-display text-3xl md:text-5xl font-bold leading-[1.1] text-tma-night tracking-tight">
-                Le catalogue premium du BTP. <br />
-                <span className="text-tma-electric">Livré à Abidjan en 24–48 h.</span>
+                Matériel BTP premium. <br />
+                <span className="text-tma-electric">Jusqu'à -40 % grâce à l'import direct.</span>
               </h2>
               <p className="mt-5 text-[17px] text-tma-ash leading-relaxed max-w-xl">
-                Carreaux, sanitaires, cuisines modernes, robinetterie, revêtements, matériaux BTP, équipements de chantier et articles importés. Commandez directement sur WhatsApp.
+                Carreaux, sanitaires, cuisines, robinetterie, matériaux : sourcés directement chez les fabricants, sans intermédiaire. Livraison 45 à 50 jours. Commandez sur WhatsApp.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-3">

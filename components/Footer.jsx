@@ -179,13 +179,33 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Baseline TMA Shop */}
+        <div className="mt-14 rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <p className="font-display text-lg md:text-xl font-bold text-white leading-tight">
+              TMA Holding — votre accès direct aux meilleurs prix BTP, sans intermédiaire.
+            </p>
+            <p className="text-sm text-white/60 mt-2">
+              Import direct Chine · Qualité pro · Livraison 45 à 50 jours à Abidjan.
+            </p>
+          </div>
+          <a
+            href={WA.catalogue}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-5 py-2.5 font-semibold hover:bg-[#1DAA52] transition-colors whitespace-nowrap"
+          >
+            <IconWhatsApp className="w-5 h-5" /> Commander sur WhatsApp
+          </a>
+        </div>
+
         {/* Bottom */}
-        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>
             © {BRAND.legal.year} {BRAND.name}. Tous droits réservés. · RCCM {BRAND.legal.rccm}
           </p>
           <p>
-            {BRAND.name} — Abidjan, Côte d'Ivoire. Construction · Rénovation · TMA Shop.
+            {BRAND.name} — Abidjan, Côte d'Ivoire · Import direct · Construction · Rénovation · TMA Shop.
           </p>
         </div>
       </div>
