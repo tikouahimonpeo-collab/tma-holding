@@ -60,7 +60,11 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/logo-tma.jpg", type: "image/jpeg" },
+    ],
+    apple: "/logo-tma.jpg",
   },
 };
 

@@ -42,11 +42,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Bloc marque */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white">
-                <span className="font-display text-lg font-bold text-tma-night">T</span>
-              </div>
-              <span className="font-display text-xl font-bold">{BRAND.name}</span>
+            <Link
+              href="/"
+              aria-label={BRAND.name}
+              className="inline-flex items-center mb-5"
+            >
+              <span className="inline-flex items-center justify-center overflow-hidden rounded-2xl bg-white p-2 shadow-md">
+                <img
+                  src="/logo-tma.jpg"
+                  alt={`${BRAND.name} — logo officiel`}
+                  width={1080}
+                  height={1080}
+                  className="block h-20 w-20 md:h-24 md:w-24 object-contain"
+                />
+              </span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               {BRAND.tagline}. Construction, rénovation, revêtement, peinture professionnelle et matériaux BTP premium à Abidjan.

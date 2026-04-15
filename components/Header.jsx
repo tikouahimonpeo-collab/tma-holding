@@ -33,33 +33,25 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 md:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div
-            className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-              scrolled ? "bg-tma-night" : "bg-white/90"
+        {/* Logo officiel TMA Holding */}
+        <Link
+          href="/"
+          aria-label={BRAND.name}
+          className="flex items-center shrink-0"
+        >
+          <span
+            className={`inline-flex items-center justify-center overflow-hidden rounded-xl transition-colors ${
+              scrolled ? "bg-transparent" : "bg-white"
             }`}
           >
-            <span className={`font-display text-lg font-bold ${scrolled ? "text-white" : "text-tma-night"}`}>
-              T
-            </span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span
-              className={`font-display text-lg font-bold tracking-tight ${
-                scrolled ? "text-tma-night" : "text-white"
-              }`}
-            >
-              {BRAND.name}
-            </span>
-            <span
-              className={`text-[10px] uppercase tracking-[0.15em] ${
-                scrolled ? "text-tma-ash" : "text-white/70"
-              }`}
-            >
-              Génie civil · Premium
-            </span>
-          </div>
+            <img
+              src="/logo-tma.jpg"
+              alt={`${BRAND.name} — logo officiel`}
+              width={1080}
+              height={1080}
+              className="block h-12 w-12 md:h-14 md:w-14 object-contain"
+            />
+          </span>
         </Link>
 
         {/* Nav desktop */}
@@ -111,11 +103,21 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] bg-tma-night text-white animate-fade-in">
           <div className="flex items-center justify-between px-4 py-3 md:px-8 border-b border-white/10">
-            <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white">
-                <span className="font-display text-lg font-bold text-tma-night">T</span>
-              </div>
-              <span className="font-display text-lg font-bold">{BRAND.name}</span>
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              aria-label={BRAND.name}
+              className="flex items-center"
+            >
+              <span className="inline-flex items-center justify-center overflow-hidden rounded-xl bg-white">
+                <img
+                  src="/logo-tma.jpg"
+                  alt={`${BRAND.name} — logo officiel`}
+                  width={1080}
+                  height={1080}
+                  className="block h-12 w-12 object-contain"
+                />
+              </span>
             </Link>
             <button
               aria-label="Fermer le menu"
