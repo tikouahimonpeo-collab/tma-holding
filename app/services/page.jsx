@@ -6,7 +6,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/Button";
-import { IconCheck, IconArrow, IconWhatsApp } from "@/components/icons";
+import { IconArrow, IconWhatsApp } from "@/components/icons";
 
 export const metadata = {
   title: "Services — Construction, rénovation, peinture airless, revêtement & plus",
@@ -14,22 +14,257 @@ export const metadata = {
     "Nos expertises BTP : construction (villas, R+1 à R+5), rénovation, peinture professionnelle airless, enduit mécanique, conception 2D/3D, revêtement premium et importation de matériaux.",
 };
 
-const CONSTRUCTION_TYPES = [
-  "Villas 1 à 5 chambres et plus",
-  "Maisons basses et résidences familiales",
-  "Immeubles R+1, R+2, R+3, R+4, R+5",
-  "Bureaux et commerces",
-  "Aménagements extérieurs",
-  "Agrandissements et extensions",
-];
-
-const RENOVATION_TYPES = [
-  "Rénovation complète clé en main",
-  "Salon, chambre, cuisine, salle de bain",
-  "Façade et ravalement",
-  "Jardin et extérieur",
-  "Électricité, plomberie, carrelage",
-  "Design intérieur et décoration",
+// ============================================================
+//  DÉTAILS DES EXPERTISES (cartes avec sous-sections à puces)
+//  Format : { id, title, shortDescription, sections: [{ title, items }], service, variant? }
+// ============================================================
+const EXPERTISES = [
+  {
+    id: "construction",
+    title: "Construction",
+    shortDescription:
+      "Du gros œuvre à la livraison clé en main. Villas haut de gamme, immeubles résidentiels, locaux commerciaux — études structurées, chantiers pilotés, délais tenus.",
+    service: "Construction",
+    sections: [
+      {
+        title: "Types d'ouvrages",
+        items: [
+          "Villas 1 à 5 chambres et plus",
+          "Maisons basses et résidences familiales",
+          "Immeubles R+1 à R+5",
+          "Bureaux, commerces et locaux professionnels",
+        ],
+      },
+      {
+        title: "Ce qui est inclus",
+        items: [
+          "Études techniques et plans d'exécution",
+          "Gros œuvre (fondations, structure béton, élévation)",
+          "Second œuvre (menuiseries, plomberie, électricité)",
+          "Pilotage chantier par conducteur de travaux dédié",
+        ],
+      },
+      {
+        title: "Nos garanties",
+        items: [
+          "Respect du budget et des délais contractuels",
+          "Garantie décennale sur le gros œuvre",
+          "Suivi photo et rapport de chantier hebdo",
+        ],
+      },
+    ],
+  },
+  {
+    id: "renovation",
+    title: "Rénovation",
+    shortDescription:
+      "Modernisez votre bien sans le reconstruire. Transformation complète ou partielle, intérieur comme extérieur, avec la même exigence qu'une construction neuve.",
+    service: "Rénovation",
+    sections: [
+      {
+        title: "Pièces et zones traitées",
+        items: [
+          "Salon, chambre, cuisine, salle de bain",
+          "Façade et ravalement extérieur",
+          "Jardin, terrasse, aménagement extérieur",
+          "Plafond, revêtement sol et mural",
+        ],
+      },
+      {
+        title: "Travaux techniques",
+        items: [
+          "Reprise électricité et plomberie aux normes",
+          "Pose carrelage, parquet, faïence",
+          "Peinture complète et finitions",
+          "Remplacement menuiseries et serrureries",
+        ],
+      },
+      {
+        title: "Design & conseil",
+        items: [
+          "Étude d'aménagement intérieur",
+          "Conseil décoration et palette",
+          "Visite avant/après avec livrables photo",
+        ],
+      },
+    ],
+  },
+  {
+    id: "peinture",
+    title: "Peinture professionnelle",
+    shortDescription:
+      "Application airless haute performance : jusqu'à 3× plus rapide qu'une peinture traditionnelle, avec une finition velouté parfaitement uniforme. Devis au m², 100 % transparent.",
+    service: "Peinture professionnelle",
+    variant: "dark",
+    sections: [
+      {
+        title: "Technologies utilisées",
+        items: [
+          "Pulvérisation airless haute pression",
+          "Rouleau et brosse pour finitions manuelles",
+          "Préparation murs : ponçage, enduit, apprêt",
+        ],
+      },
+      {
+        title: "Rendus possibles",
+        items: [
+          "Mat velouté, satiné, brillant",
+          "Façade extérieure résistante intempéries",
+          "Peinture sols industriels et résines",
+        ],
+      },
+      {
+        title: "Performance chantier",
+        items: [
+          "Rapidité × 3 vs rouleau traditionnel",
+          "Zéro trace, zéro coulure",
+          "Réduction coût main-d'œuvre significative",
+          "Protection totale du chantier pendant application",
+        ],
+      },
+    ],
+  },
+  {
+    id: "enduit",
+    title: "Enduit mécanique",
+    shortDescription:
+      "Projection mécanisée de l'enduit : temps de chantier divisé par 2, rendu plus homogène qu'une application manuelle. Idéal pour grandes surfaces intérieures comme extérieures.",
+    service: "Enduit mécanique",
+    sections: [
+      {
+        title: "Application",
+        items: [
+          "Machine à projeter haute pression type PFT",
+          "Équipe formée, sécurité chantier maîtrisée",
+          "Intérieur et extérieur, neuf ou rénovation",
+        ],
+      },
+      {
+        title: "Finitions disponibles",
+        items: [
+          "Enduit taloché",
+          "Enduit gratté",
+          "Enduit lissé à la finition",
+          "Aspect pierre ou ciment ciré",
+        ],
+      },
+      {
+        title: "Avantages vs méthode manuelle",
+        items: [
+          "Temps de chantier divisé par 2",
+          "Rendu sans jointure ni raccord visible",
+          "Meilleure adhérence au support",
+        ],
+      },
+    ],
+  },
+  {
+    id: "conception",
+    title: "Conception 2D / 3D",
+    shortDescription:
+      "Visualisez votre projet avant le premier coup de pelle. Plans techniques, modélisation 3D photoréaliste, visite virtuelle — validez en connaissance de cause.",
+    service: "Conception 2D / 3D",
+    sections: [
+      {
+        title: "Livrables 2D",
+        items: [
+          "Plans techniques et d'exécution",
+          "Plans de masse et d'implantation",
+          "Façades, coupes, détails constructifs",
+          "Dossier permis de construire",
+        ],
+      },
+      {
+        title: "Livrables 3D",
+        items: [
+          "Modélisation photoréaliste extérieure",
+          "Rendu intérieur par pièce",
+          "Visite virtuelle navigable",
+          "Étude d'intégration paysagère",
+        ],
+      },
+      {
+        title: "Processus",
+        items: [
+          "Révisions illimitées avant validation finale",
+          "Intégration directe au chiffrage global",
+          "Alignement avec vos contraintes budgétaires",
+        ],
+      },
+    ],
+  },
+  {
+    id: "revetement",
+    title: "Revêtement & finition",
+    shortDescription:
+      "Les finitions qui font la différence. Carrelage, marbre, sanitaire haut de gamme, habillage mural — chaque détail posé à la main par nos équipes expérimentées.",
+    service: "Revêtement & finition",
+    variant: "dark",
+    sections: [
+      {
+        title: "Sols & murs",
+        items: [
+          "Carrelage grès cérame, effet marbre, mosaïque",
+          "Marbre et pierre naturelle",
+          "Parquet massif, stratifié AC4/AC5",
+          "Habillage mural décoratif (bois, béton ciré, pierre)",
+        ],
+      },
+      {
+        title: "Sanitaire & salle de bain",
+        items: [
+          "Pose douche italienne, baignoire, WC suspendu",
+          "Vasques et meubles sur mesure",
+          "Robinetterie premium, finition chromée ou noire",
+          "Miroirs LED et accessoires haut de gamme",
+        ],
+      },
+      {
+        title: "Qualité d'exécution",
+        items: [
+          "Alignements et joints au millimètre",
+          "Contrôle des niveaux au laser",
+          "Finitions de luxe dignes des plus belles adresses",
+        ],
+      },
+    ],
+  },
+  {
+    id: "importation",
+    title: "Importation & fourniture",
+    shortDescription:
+      "Accès direct aux fabricants Chine, Asie, Europe et Moyen-Orient. Matériaux premium, équipements de chantier et articles décoratifs — sans intermédiaire.",
+    service: "Importation & fourniture",
+    sections: [
+      {
+        title: "Sourcing géographique",
+        items: [
+          "Chine (matériaux BTP, sanitaires, cuisines)",
+          "Europe (équipements pro, menuiseries)",
+          "Moyen-Orient (marbre, pierres rares)",
+          "Asie du Sud-Est (mobilier, décoration)",
+        ],
+      },
+      {
+        title: "Catégories disponibles",
+        items: [
+          "Matériaux BTP : ciment, sable, gravier, ferraille",
+          "Finitions : carreaux, marbre, sanitaire, robinetterie",
+          "Équipements de chantier pro",
+          "Mobilier, luminaires, articles décoratifs",
+        ],
+      },
+      {
+        title: "Accompagnement logistique",
+        items: [
+          "Sélection et négociation fournisseurs",
+          "Contrôle qualité avant expédition",
+          "Gestion douanes et livraison Abidjan",
+          "Délai standard 45 à 50 jours",
+        ],
+      },
+    ],
+  },
 ];
 
 export default function ServicesPage() {
@@ -45,7 +280,7 @@ export default function ServicesPage() {
           {SERVICES.map((s) => (
             <Link
               key={s.slug}
-              href={`#${s.slug}`}
+              href={`#expertise-${s.slug}`}
               className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium px-4 py-2 hover:bg-white hover:text-tma-night transition-all"
             >
               {s.title}
@@ -54,7 +289,7 @@ export default function ServicesPage() {
         </div>
       </HeroSimple>
 
-      {/* GRILLE DE SERVICES */}
+      {/* VUE D'ENSEMBLE — grille compacte */}
       <section className="py-20 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <SectionTitle
@@ -72,163 +307,24 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CONSTRUCTION — BLOC DÉTAILLÉ */}
-      <DetailSection
-        slug="construction-detail"
-        eyebrow="Focus — Construction"
-        title="Villas, immeubles et ouvrages clé en main."
-        image={IMG.construction}
-        benefit="Budget respecté, délais tenus, garantie décennale."
-        bullets={CONSTRUCTION_TYPES}
-        service="Construction"
-      />
-
-      {/* RÉNOVATION — BLOC DÉTAILLÉ */}
-      <DetailSection
-        slug="renovation-detail"
-        eyebrow="Focus — Rénovation"
-        title="Moderniser sans reconstruire."
-        image={IMG.renovation}
-        benefit="Un habitat repensé, plus moderne et plus confortable."
-        bullets={RENOVATION_TYPES}
-        service="Rénovation"
-        reverse
-      />
-
-      {/* PEINTURE PRO + ENDUIT — BLOC */}
+      {/* EXPERTISES DÉTAILLÉES — cartes avec sous-sections à puces */}
       <section className="py-20 md:py-28 bg-tma-stone">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="rounded-2xl bg-white p-8 md:p-10 border border-tma-stone shadow-premium">
-            <p className="text-tma-electric text-xs font-bold tracking-[0.2em] uppercase mb-3">
-              Peinture professionnelle
-            </p>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-tma-night mb-4">
-              Application airless — rapidité et finition
-            </h3>
-            <p className="text-tma-ash leading-relaxed mb-5">
-              Grâce à notre flotte airless, nous peignons jusqu'à 3 fois plus vite qu'une peinture traditionnelle, avec un rendu velouté parfaitement uniforme. Devis au m², transparent.
-            </p>
-            <ul className="space-y-2 mb-6">
-              {[
-                "Devis au m² clair",
-                "Rapidité x3 vs rouleau",
-                "Finition velouté sans trace",
-                "Réduction main-d'œuvre",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-tma-night">
-                  <IconCheck className="w-4 h-4 mt-0.5 text-tma-electric shrink-0" /> {b}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-2">
-              <Button href="/devis" variant="dark" size="sm">
-                Devis peinture au m²
-              </Button>
-              <Button
-                href={WA.service("Peinture professionnelle")}
-                target="_blank"
-                variant="whatsapp"
-                size="sm"
-                iconLeft={<IconWhatsApp className="w-4 h-4" />}
-              >
-                WhatsApp
-              </Button>
-            </div>
-          </div>
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <SectionTitle
+            eyebrow="Expertises détaillées"
+            title="Des solutions complètes pour vos projets BTP."
+            description="Chaque expertise est structurée pour couvrir tout le spectre du besoin — du cadrage technique à la finition la plus fine. Choisissez le métier qui vous intéresse."
+            align="center"
+            className="mb-14"
+          />
 
-          <div className="rounded-2xl bg-tma-night text-white p-8 md:p-10 shadow-premium">
-            <p className="text-tma-electric-200 text-xs font-bold tracking-[0.2em] uppercase mb-3">
-              Enduit mécanique
-            </p>
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Rendu homogène, application rapide
-            </h3>
-            <p className="text-white/80 leading-relaxed mb-5">
-              L'enduit mécanisé divise par 2 le temps de chantier pour un rendu plus homogène que la méthode manuelle. Idéal pour grandes surfaces, intérieur comme extérieur.
-            </p>
-            <ul className="space-y-2 mb-6">
-              {[
-                "Machine haute pression",
-                "Rendu sans jointure",
-                "Temps divisé par 2",
-                "Finition taloché, gratté ou lissé",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-white/90">
-                  <IconCheck className="w-4 h-4 mt-0.5 text-tma-electric shrink-0" /> {b}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-2">
-              <Button href="/devis" variant="primary" size="sm">
-                Devis enduit mécanique
-              </Button>
-              <Button
-                href={WA.service("Enduit mécanique")}
-                target="_blank"
-                variant="whatsapp"
-                size="sm"
-                iconLeft={<IconWhatsApp className="w-4 h-4" />}
-              >
-                WhatsApp
-              </Button>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {EXPERTISES.map((e) => (
+              <ExpertiseCard key={e.id} expertise={e} />
+            ))}
           </div>
         </div>
       </section>
-
-      {/* CONCEPTION + REVÊTEMENT */}
-      <DetailSection
-        slug="conception-detail"
-        eyebrow="Focus — Conception 2D / 3D"
-        title="Voyez votre projet avant de le construire."
-        image={IMG.conception}
-        benefit="Décidez en connaissance de cause, sans mauvaise surprise."
-        bullets={[
-          "Plans techniques et permis",
-          "Modélisation 3D photo-réaliste",
-          "Visite virtuelle du projet",
-          "Implantation, façades, coupes",
-          "Révisions illimitées avant validation",
-          "Intégration à votre budget global",
-        ]}
-        service="Conception 2D / 3D"
-      />
-
-      <DetailSection
-        slug="revetement-detail"
-        eyebrow="Focus — Revêtement & finition"
-        title="Des finitions dignes des plus belles adresses."
-        image={IMG.marbre}
-        benefit="Carrelage, marbre, sanitaire, finitions premium — sans compromis."
-        bullets={[
-          "Pose carrelage sols et murs",
-          "Marbre et pierre naturelle",
-          "Habillage mural décoratif",
-          "Installation sanitaire complète",
-          "Peinture et laque haut de gamme",
-          "Détails premium sur mesure",
-        ]}
-        service="Revêtement & finition"
-        reverse
-      />
-
-      {/* IMPORTATION */}
-      <DetailSection
-        slug="importation-detail"
-        eyebrow="Focus — Importation & fourniture"
-        title="Sourcing matériaux, équipements et articles importés."
-        image={IMG.equipement}
-        benefit="Des prix directs fabricant, sans intermédiaire."
-        bullets={[
-          "Sourcing Europe, Asie, Moyen-Orient",
-          "Matériaux premium à prix direct",
-          "Équipements BTP et chantier",
-          "Mobilier, luminaires, sanitaires",
-          "Accompagnement logistique complet",
-          "Solutions compétitives et transparentes",
-        ]}
-        service="Importation & fourniture"
-      />
 
       <CTASection
         eyebrow="Besoin d'un chiffrage ?"
@@ -239,51 +335,94 @@ export default function ServicesPage() {
   );
 }
 
-function DetailSection({ slug, eyebrow, title, image, benefit, bullets, service, reverse = false }) {
+// ============================================================
+//  ExpertiseCard — carte service avec sous-sections à puces
+//  Palette TMA : bleu nuit + bleu électrique + blanc
+//  Variante "dark" pour alterner visuellement
+// ============================================================
+function ExpertiseCard({ expertise }) {
+  const isDark = expertise.variant === "dark";
+
+  const base = isDark
+    ? "bg-tma-night text-white border-tma-night"
+    : "bg-white text-tma-night border-tma-stone";
+
+  const subtitleColor = isDark ? "text-white/80" : "text-tma-ash";
+  const sectionTitleColor = isDark ? "text-white" : "text-tma-night";
+  const itemColor = isDark ? "text-white/85" : "text-tma-night/85";
+  const bulletColor = isDark
+    ? "bg-tma-electric-200"
+    : "bg-tma-electric";
+  const primaryBtn = isDark
+    ? "bg-tma-electric text-white hover:bg-white hover:text-tma-night"
+    : "bg-tma-night text-white hover:bg-tma-electric";
+  const secondaryBtn = isDark
+    ? "border border-white/30 text-white hover:bg-white hover:text-tma-night"
+    : "border border-tma-stone text-tma-night hover:border-tma-electric hover:text-tma-electric";
+  const eyebrowColor = isDark ? "text-tma-electric-200" : "text-tma-electric";
+
   return (
-    <section id={slug} className="py-20 md:py-28 bg-white">
-      <div
-        className={`mx-auto max-w-7xl px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-          reverse ? "lg:[&>div:first-child]:order-last" : ""
-        }`}
-      >
-        <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-[5/4]">
-          <img src={image} alt={title} className="h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-tma-night/30 via-transparent to-transparent" />
-        </div>
-        <div>
-          <p className="text-tma-electric text-xs font-bold tracking-[0.2em] uppercase mb-3">
-            {eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-tma-night leading-tight mb-4">
-            {title}
-          </h2>
-          <p className="text-tma-night/80 italic mb-6 border-l-4 border-tma-electric pl-4">
-            {benefit}
-          </p>
-          <ul className="space-y-3 mb-8">
-            {bullets.map((b) => (
-              <li key={b} className="flex items-start gap-3">
-                <IconCheck className="w-5 h-5 mt-0.5 text-tma-electric shrink-0" />
-                <span className="text-tma-night">{b}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-wrap gap-3">
-            <Button href="/devis" variant="dark" iconRight={<IconArrow className="w-4 h-4" />}>
-              Demander un devis
-            </Button>
-            <Button
-              href={WA.service(service)}
-              target="_blank"
-              variant="whatsapp"
-              iconLeft={<IconWhatsApp className="w-5 h-5" />}
-            >
-              Écrire sur WhatsApp
-            </Button>
-          </div>
-        </div>
+    <article
+      id={`expertise-${expertise.id}`}
+      className={`rounded-3xl border ${base} p-8 md:p-10 shadow-premium hover:shadow-xl transition-shadow scroll-mt-24`}
+    >
+      {/* Header */}
+      <div className="mb-6">
+        <p
+          className={`${eyebrowColor} text-xs font-bold tracking-[0.2em] uppercase mb-3`}
+        >
+          Expertise TMA
+        </p>
+        <h3 className="font-display text-2xl md:text-3xl font-bold leading-tight">
+          {expertise.title}
+        </h3>
+        <p className={`mt-4 ${subtitleColor} leading-relaxed`}>
+          {expertise.shortDescription}
+        </p>
       </div>
-    </section>
+
+      {/* Sections */}
+      <div className="space-y-6 mb-8">
+        {expertise.sections.map((section, i) => (
+          <div key={i}>
+            <h4
+              className={`${sectionTitleColor} font-display text-base font-semibold mb-3`}
+            >
+              {section.title}
+            </h4>
+            <ul className="space-y-2">
+              {section.items.map((item, j) => (
+                <li key={j} className="flex items-start gap-3">
+                  <span
+                    className={`mt-2 h-2 w-2 rounded-full ${bulletColor} shrink-0`}
+                  />
+                  <span className={`${itemColor} text-sm leading-relaxed`}>
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* CTAs */}
+      <div className="flex flex-wrap gap-3">
+        <Link
+          href="/devis"
+          className={`inline-flex items-center gap-2 rounded-full ${primaryBtn} px-6 py-3 text-sm font-semibold transition-colors`}
+        >
+          Demander un devis <IconArrow className="w-4 h-4" />
+        </Link>
+        <a
+          href={WA.service(expertise.service)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 rounded-full ${secondaryBtn} px-6 py-3 text-sm font-semibold transition-colors`}
+        >
+          <IconWhatsApp className="w-4 h-4" /> WhatsApp
+        </a>
+      </div>
+    </article>
   );
 }
