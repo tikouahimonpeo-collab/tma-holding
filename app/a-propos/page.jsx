@@ -88,7 +88,15 @@ export default function AboutPage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-premium">
-              <img src={IMG.equipe} alt="Équipe TMA Holding" className="h-full w-full object-cover" loading="lazy" />
+              <img
+                src={IMG.equipe}
+                alt="Équipe TMA Holding sur chantier de construction haut de gamme en Côte d'Ivoire"
+                className="h-full w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+                width={1400}
+                height={1750}
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 rounded-2xl bg-tma-night text-white p-6 shadow-2xl max-w-xs">
               <p className="text-tma-electric-200 text-xs font-semibold tracking-[0.2em] uppercase mb-2">
