@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   TMA HOLDING — Design tokens & base
+   ============================================================ */
+
+:root {
+  --tma-night: #0a1a2f;
+  --tma-night-deep: #061224;
+  --tma-electric: #1e90ff;
+  --tma-gold: #d4a84b;
+  --tma-bone: #fafafa;
+  --tma-ink: #0b0b0f;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  background: var(--tma-bone);
+  color: var(--tma-ink);
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+h1 { letter-spacing: -0.035em; font-weight: 800; }
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-tma-electric px-6 py-3 text-sm font-semibold text-white shadow-premium
+           transition-all duration-300 hover:-translate-y-0.5 hover:bg-tma-electric-500 hover:shadow-glow
+           focus:outline-none focus:ring-4 focus:ring-tma-electric/30 active:translate-y-0;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-tma-night px-6 py-3 text-sm font-semibold text-white
+           transition-all duration-300 hover:-translate-y-0.5 hover:bg-tma-night-700 hover:shadow-premium;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-tma-night/20 bg-white px-6 py-3 text-sm font-semibold text-tma-night
+           transition-all duration-300 hover:border-tma-night hover:bg-tma-night hover:text-white;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-premium
+           transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1fba56];
+  }
+  .container-tma {
+    @apply mx-auto w-full max-w-[80rem] px-6 md:px-10;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-tma-electric;
+  }
+  .eyebrow-light {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-tma-electric-200;
+  }
+  .heading-xl {
+    @apply text-4xl font-extrabold leading-[1.05] md:text-6xl lg:text-7xl;
+  }
+  .heading-lg {
+    @apply text-3xl font-extrabold leading-[1.1] md:text-5xl;
+  }
+  .heading-md {
+    @apply text-2xl font-bold leading-[1.2] md:text-3xl;
+  }
+  .lead {
+    @apply text-base leading-relaxed text-tma-ash md:text-lg;
+  }
+  .card-premium {
+    @apply rounded-2xl border border-tma-night/8 bg-white p-6 shadow-sm transition-all duration-300
+           hover:-translate-y-1 hover:border-tma-electric/40 hover:shadow-premium;
+  }
+  .gradient-hero {
+    background:
+      linear-gradient(135deg, rgba(10, 26, 47, 0.92) 0%, rgba(10, 26, 47, 0.65) 55%, rgba(30, 144, 255, 0.4) 100%);
+  }
+  .divider-gold {
+    @apply inline-block h-[3px] w-14 rounded-full bg-tma-gold;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+            mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+}
+
+/* Scroll reveal helper — add class .reveal and toggle .is-visible with IntersectionObserver */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }

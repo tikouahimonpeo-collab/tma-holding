@@ -1,0 +1,31 @@
+{
+  "name": "tma-holding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site premium TMA Holding — BTP, Revêtement, Conception & TMA Shop. Abidjan, Côte d'Ivoire.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@relume_io/relume-ui": "^1.3.0",
+    "framer-motion": "^11.3.0",
+    "googleapis": "^144.0.0",
+    "next": "14.2.5",
+    "nodemailer": "^6.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@relume_io/relume-tailwind": "^1.2.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6"
+  }
+}
