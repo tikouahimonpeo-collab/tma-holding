@@ -181,8 +181,10 @@ export default function ContactPage() {
         </div>
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1529551739587-e242c564f727?auto=format&fit=crop&w=1800&q=80"
+            src={IMG.chantier}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover"
           />
         </div>

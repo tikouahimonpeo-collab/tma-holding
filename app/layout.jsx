@@ -1,8 +1,16 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
 import { BRAND } from "@/lib/brand";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata = {
   metadataBase: new URL("https://tmaholding.ci"),
@@ -95,7 +103,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"

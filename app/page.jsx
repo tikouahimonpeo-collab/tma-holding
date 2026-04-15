@@ -222,7 +222,7 @@ export default function HomePage() {
       {/* POURQUOI CHOISIR + STATS */}
       <section className="relative py-20 md:py-28 overflow-hidden bg-tma-night">
         <div className="absolute inset-0 opacity-25">
-          <img src={IMG.chantier} alt="" className="h-full w-full object-cover" />
+          <img src={IMG.chantier} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-tma-night/70" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-8">

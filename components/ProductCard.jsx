@@ -6,7 +6,7 @@ import { IconWhatsApp, IconArrow, IconCheck } from "./icons";
 
 export function ProductCard({ product }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-tma-stone shadow-sm hover:shadow-premium transition-all duration-500 hover:-translate-y-1">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-tma-stone shadow-sm hover:shadow-md transition-shadow duration-300">
       <Link
         href={`/boutique/${product.slug}`}
         className="relative block h-56 md:h-64 overflow-hidden"
@@ -15,7 +15,8 @@ export function ProductCard({ product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         {/* Badge IMPORT DIRECT permanent */}
         <div className="absolute top-3 left-3">

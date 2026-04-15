@@ -28,6 +28,7 @@ export function HeroSection({
           alt=""
           className="h-full w-full object-cover"
           fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-tma-night via-tma-night/80 to-tma-night/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-tma-night/60 via-transparent to-transparent" />
@@ -37,7 +38,7 @@ export function HeroSection({
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8 py-24 md:py-32 w-full">
         <div className="max-w-3xl">
           {eyebrow && (
-            <p className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mb-6">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-white/90 font-semibold mb-6">
               {eyebrow}
             </p>
           )}
@@ -94,7 +95,13 @@ export function HeroSimple({ image, eyebrow, title, description, children }) {
   return (
     <section className="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden bg-tma-night">
       <div className="absolute inset-0">
-        <img src={image} alt="" className="h-full w-full object-cover opacity-25" />
+        <img
+          src={image}
+          alt=""
+          className="h-full w-full object-cover opacity-25"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-tma-night/80 to-tma-night" />
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">

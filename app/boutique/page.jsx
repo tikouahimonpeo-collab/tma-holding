@@ -132,7 +132,7 @@ export default function ShopPage({ searchParams }) {
             {TRUST.map((t) => (
               <div
                 key={t.label}
-                className="flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm px-4 py-3"
+                className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/15 px-4 py-3"
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tma-electric/20 text-tma-electric-200">
                   <IconCheck className="w-4 h-4" />
@@ -390,7 +390,7 @@ export default function ShopPage({ searchParams }) {
       {/* CATALOGUE PDF */}
       <section className="py-20 bg-tma-night relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src={IMG.equipement} alt="" className="h-full w-full object-cover" />
+          <img src={IMG.equipement} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         </div>
         <div className="relative mx-auto max-w-4xl px-4 md:px-8 text-center">
           <p className="text-tma-electric-200 text-xs font-bold tracking-[0.25em] uppercase mb-4">

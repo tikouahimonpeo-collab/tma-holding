@@ -86,8 +86,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ["'Inter'", "'Helvetica Neue'", "system-ui", "sans-serif"],
-        body: ["'Inter'", "'Helvetica Neue'", "system-ui", "sans-serif"],
+        display: ["var(--font-inter)", "'Helvetica Neue'", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "'Helvetica Neue'", "system-ui", "sans-serif"],
       },
       boxShadow: {
         sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",

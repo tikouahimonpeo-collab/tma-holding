@@ -281,7 +281,7 @@ export default function ServicesPage() {
             <Link
               key={s.slug}
               href={`#expertise-${s.slug}`}
-              className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium px-4 py-2 hover:bg-white hover:text-tma-night transition-all"
+              className="rounded-full bg-white/15 border border-white/25 text-white text-sm font-medium px-4 py-2 hover:bg-white hover:text-tma-night transition-colors"
             >
               {s.title}
             </Link>

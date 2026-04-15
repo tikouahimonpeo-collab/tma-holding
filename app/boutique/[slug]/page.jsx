@@ -58,6 +58,8 @@ export default function ProductPage({ params }) {
               <img
                 src={product.image}
                 alt={product.name}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               {product.badge && (
