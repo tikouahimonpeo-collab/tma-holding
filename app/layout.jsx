@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://tmaholding.ci"),
+  metadataBase: new URL("https://tma-holding.net"),
   title: {
     default: `${BRAND.name} — ${BRAND.baseline}`,
     template: `%s · ${BRAND.name}`,
@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "fr_CI",
-    url: "https://tmaholding.ci",
+    url: "https://tma-holding.net",
     siteName: BRAND.name,
     title: `${BRAND.name} — ${BRAND.baseline}`,
     description: BRAND.description,
@@ -88,7 +88,7 @@ const jsonLd = {
   "@type": "GeneralContractor",
   name: BRAND.name,
   description: BRAND.description,
-  url: "https://tmaholding.ci",
+  url: "https://tma-holding.net",
   telephone: BRAND.phone,
   email: BRAND.email,
   address: {

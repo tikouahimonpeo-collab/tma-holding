@@ -1,6 +1,6 @@
 import { PRODUCTS } from "@/lib/products";
 
-const BASE_URL = "https://tmaholding.ci";
+const BASE_URL = "https://tma-holding.net";
 
 export default function sitemap() {
   const now = new Date().toISOString();
