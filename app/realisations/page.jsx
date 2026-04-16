@@ -6,9 +6,23 @@ import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata = {
-  title: "Réalisations — Nos chantiers BTP premium à Abidjan",
+  title: "Réalisations BTP Abidjan | Villas, Immeubles, Rénovations premium",
   description:
-    "Villas, immeubles R+5, rénovations haut de gamme, revêtement marbre, aménagements corporate. Découvrez les réalisations TMA Holding en Côte d'Ivoire.",
+    "Portfolio TMA Holding : villas modernes livrées à Cocody, immeubles résidentiels R+5, rénovations haut de gamme, revêtement marbre, aménagements corporate à Abidjan. Vrais projets, vraies livraisons.",
+  keywords: [
+    "réalisations BTP Abidjan",
+    "villas livrées Cocody",
+    "immeubles Abidjan",
+    "portfolio construction Côte d'Ivoire",
+    "projets TMA Holding",
+  ],
+  alternates: { canonical: "https://tma-holding.net/realisations" },
+  openGraph: {
+    title: "Réalisations TMA Holding — Projets BTP livrés à Abidjan",
+    description:
+      "Villas, immeubles, rénovations : découvrez nos chantiers en Côte d'Ivoire.",
+    url: "https://tma-holding.net/realisations",
+  },
 };
 
 export default function RealisationsPage() {

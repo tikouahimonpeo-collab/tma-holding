@@ -15,9 +15,22 @@ import {
 } from "@/components/icons";
 
 export const metadata = {
-  title: "À propos — L'entreprise TMA Holding",
+  title: "À propos TMA Holding | Entreprise BTP Abidjan depuis 2015",
   description:
-    "Découvrez TMA Holding : vision, mission, valeurs et ambition. Une entreprise BTP premium basée à Abidjan, Côte d'Ivoire, au service de projets haut de gamme.",
+    "TMA Holding : 10 ans d'expertise BTP premium à Cocody Riviera Palmeraie (Abidjan). Vision, équipe, valeurs et engagement qualité pour la construction et la rénovation en Côte d'Ivoire.",
+  keywords: [
+    "TMA Holding",
+    "entreprise BTP Abidjan",
+    "société construction Côte d'Ivoire",
+    "BTP Cocody Riviera",
+  ],
+  alternates: { canonical: "https://tma-holding.net/a-propos" },
+  openGraph: {
+    title: "À propos de TMA Holding — BTP premium Abidjan",
+    description:
+      "10 ans d'engagement pour le BTP ivoirien. Équipe, valeurs, histoire.",
+    url: "https://tma-holding.net/a-propos",
+  },
 };
 
 const VALUES = [

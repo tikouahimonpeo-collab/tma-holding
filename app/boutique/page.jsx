@@ -20,9 +20,27 @@ import {
 } from "@/components/icons";
 
 export const metadata = {
-  title: "TMA Shop — Matériel BTP à prix direct import (45-50 jours)",
+  title: "Matériaux BTP Abidjan Prix Direct Import | TMA Shop Côte d'Ivoire",
   description:
-    "Carreaux, sanitaires, cuisines, robinetterie, matériaux BTP : jusqu'à -40 % moins cher qu'à Abidjan grâce à l'import direct usine. Livraison 45 à 50 jours. Commandez sur WhatsApp.",
+    "Carreaux, sanitaires, cuisines modernes, robinetterie, ciment, gravier, équipements chantier : jusqu'à -40 % moins cher qu'à Abidjan grâce à l'import direct Chine. Livraison 45-50 jours. Commandez sur WhatsApp.",
+  keywords: [
+    "matériaux BTP Abidjan",
+    "carrelage Abidjan",
+    "cuisine moderne Abidjan",
+    "sanitaire Abidjan",
+    "robinetterie Côte d'Ivoire",
+    "ciment Abidjan prix",
+    "importation matériaux Chine Côte d'Ivoire",
+    "équipements chantier Abidjan",
+    "TMA Shop",
+  ],
+  alternates: { canonical: "https://tma-holding.net/boutique" },
+  openGraph: {
+    title: "TMA Shop — Matériaux BTP import direct, jusqu'à -40 %",
+    description:
+      "Catalogue complet : carreaux, sanitaires, cuisines, matériaux. Livraison 45-50 j.",
+    url: "https://tma-holding.net/boutique",
+  },
 };
 
 const TRUST = [

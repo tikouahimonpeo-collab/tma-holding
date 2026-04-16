@@ -11,9 +11,22 @@ import {
 } from "@/components/icons";
 
 export const metadata = {
-  title: "Contact — Parlons de votre projet BTP",
+  title: "Contact TMA Holding | Entreprise BTP Cocody Riviera Palmeraie Abidjan",
   description:
-    "Contactez TMA Holding à Abidjan : WhatsApp, téléphone, email, formulaire. Un conseiller vous répond sous 24 h. Cocody Riviera Palmeraie.",
+    "Contactez TMA Holding à Abidjan : WhatsApp +86 132 65 91 24 68, +225 05 85 31 81 52, email tmaholdingci@gmail.com. Bureau Cocody Riviera Palmeraie. Réponse sous 24 h.",
+  keywords: [
+    "contact TMA Holding",
+    "entreprise BTP Cocody",
+    "adresse TMA Holding Abidjan",
+    "WhatsApp BTP Côte d'Ivoire",
+  ],
+  alternates: { canonical: "https://tma-holding.net/contact" },
+  openGraph: {
+    title: "Contact TMA Holding — BTP Abidjan",
+    description:
+      "Cocody Riviera Palmeraie · WhatsApp · Téléphone · Email · Formulaire.",
+    url: "https://tma-holding.net/contact",
+  },
 };
 
 const QUICK_ACTIONS = [

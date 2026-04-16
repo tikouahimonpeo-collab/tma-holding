@@ -11,9 +11,22 @@ import {
 } from "@/components/icons";
 
 export const metadata = {
-  title: "Demande de devis gratuit — Construction, rénovation, matériaux BTP",
+  title: "Devis BTP Gratuit Abidjan | Construction, Rénovation, Matériaux",
   description:
-    "Obtenez un devis gratuit en 24 h pour votre projet de construction, rénovation, revêtement ou matériaux BTP. Sans engagement, 100% confidentiel. Devis TMA Holding Abidjan.",
+    "Obtenez un devis BTP gratuit sous 24 h à Abidjan : construction villa, rénovation, peinture, conception 2D/3D, matériaux import direct. Sans engagement, 100 % confidentiel. TMA Holding.",
+  keywords: [
+    "devis construction Abidjan",
+    "devis rénovation Abidjan",
+    "devis BTP gratuit Côte d'Ivoire",
+    "chiffrage villa Cocody",
+    "prix construction Abidjan",
+  ],
+  alternates: { canonical: "https://tma-holding.net/devis" },
+  openGraph: {
+    title: "Devis BTP gratuit en 24 h — TMA Holding Abidjan",
+    description: "Construction, rénovation, matériaux : votre projet chiffré gratuitement.",
+    url: "https://tma-holding.net/devis",
+  },
 };
 
 const REASSURANCE = [

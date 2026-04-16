@@ -9,9 +9,25 @@ import { Button } from "@/components/Button";
 import { IconArrow, IconWhatsApp } from "@/components/icons";
 
 export const metadata = {
-  title: "Services — Construction, rénovation, peinture airless, revêtement & plus",
+  title: "Services BTP Abidjan | Construction, Rénovation, Peinture, Conception 3D",
   description:
-    "Nos expertises BTP : construction (villas, R+1 à R+5), rénovation, peinture professionnelle airless, enduit mécanique, conception 2D/3D, revêtement premium et importation de matériaux.",
+    "7 expertises TMA Holding à Abidjan : construction villa (R+1 à R+5), rénovation clé en main, peinture airless, enduit mécanique, conception 2D/3D, revêtement premium, importation matériaux BTP. Devis gratuit 24 h.",
+  keywords: [
+    "construction Abidjan",
+    "rénovation Abidjan",
+    "peinture professionnelle Abidjan",
+    "conception 2D 3D Abidjan",
+    "enduit mécanique Côte d'Ivoire",
+    "revêtement finition Abidjan",
+    "entreprise BTP Cocody",
+  ],
+  alternates: { canonical: "https://tma-holding.net/services" },
+  openGraph: {
+    title: "Services BTP Abidjan — TMA Holding",
+    description:
+      "Construction, rénovation, conception 2D/3D, revêtements premium à Abidjan.",
+    url: "https://tma-holding.net/services",
+  },
 };
 
 // ============================================================

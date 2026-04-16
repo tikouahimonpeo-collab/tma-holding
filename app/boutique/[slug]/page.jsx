@@ -20,9 +20,18 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const product = productBySlug(params.slug);
   if (!product) return {};
+  const url = `https://tma-holding.net/boutique/${product.slug}`;
   return {
-    title: `${product.name} — TMA Shop`,
-    description: product.shortDescription,
+    title: `${product.name} | TMA Shop Abidjan prix direct import`,
+    description: `${product.shortDescription} Import direct. Livraison 45-50 jours à Abidjan. Commandez sur WhatsApp.`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${product.name} — TMA Shop`,
+      description: product.shortDescription,
+      url,
+      images: [{ url: product.image }],
+      type: "website",
+    },
   };
 }
 
@@ -31,9 +40,47 @@ export default function ProductPage({ params }) {
   if (!product) notFound();
 
   const related = relatedProducts(product);
+  const url = `https://tma-holding.net/boutique/${product.slug}`;
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: [product.image],
+    description: product.shortDescription,
+    category: categoryName(product.category),
+    brand: { "@type": "Brand", name: "TMA Shop" },
+    offers: {
+      "@type": "Offer",
+      url,
+      priceCurrency: "XOF",
+      availability:
+        product.availability === "Sur commande"
+          ? "https://schema.org/PreOrder"
+          : "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: "TMA Holding" },
+    },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tma-holding.net" },
+      { "@type": "ListItem", position: 2, name: "TMA Shop", item: "https://tma-holding.net/boutique" },
+      { "@type": "ListItem", position: 3, name: categoryName(product.category), item: `https://tma-holding.net/boutique?cat=${product.category}` },
+      { "@type": "ListItem", position: 4, name: product.name, item: url },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {/* Fil d'Ariane + hero produit */}
       <section className="pt-32 md:pt-40 pb-16 bg-tma-stone">
         <div className="mx-auto max-w-7xl px-4 md:px-8">

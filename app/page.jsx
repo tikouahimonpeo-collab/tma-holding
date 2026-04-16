@@ -30,9 +30,24 @@ import {
 } from "@/components/icons";
 
 export const metadata = {
-  title: "Accueil — Construction, rénovation & matériaux premium à Abidjan",
+  title: "Entreprise BTP Abidjan | Construction, Rénovation & Matériaux",
   description:
-    "TMA Holding, entreprise BTP premium à Abidjan : construction, rénovation, revêtement, peinture professionnelle, conception 2D/3D et matériaux BTP via TMA Shop. Devis gratuit sous 24 h.",
+    "TMA Holding, entreprise BTP premium à Abidjan (Cocody Riviera). Construction villa, rénovation, peinture airless, conception 2D/3D, matériaux BTP à prix direct import. Devis gratuit sous 24 h en Côte d'Ivoire.",
+  keywords: [
+    "entreprise BTP Abidjan",
+    "construction Abidjan",
+    "rénovation maison Abidjan",
+    "matériaux BTP Côte d'Ivoire",
+    "construction villa Cocody",
+    "TMA Holding",
+  ],
+  alternates: { canonical: "https://tma-holding.net" },
+  openGraph: {
+    title: "TMA Holding — Entreprise BTP premium à Abidjan",
+    description:
+      "Construction, rénovation, matériaux BTP à prix direct import. Devis gratuit sous 24 h.",
+    url: "https://tma-holding.net",
+  },
 };
 
 const STATS = [
@@ -95,8 +110,64 @@ export default function HomePage() {
   const featured = featuredProducts().slice(0, 8);
   const recentProjects = PROJECTS.slice(0, 3);
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Quel est le tarif pour la construction d'une villa à Abidjan ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Le tarif dépend de la surface, du standing et du quartier. TMA Holding propose un chiffrage gratuit sous 24 h pour toute construction à Abidjan et Cocody. Nos villas haut de gamme démarrent à partir de 35 M FCFA pour les configurations 3 chambres clé en main.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "TMA Holding intervient dans quelles zones d'Abidjan ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Nous intervenons dans toute la région d'Abidjan : Cocody, Riviera, Riviera Palmeraie, Plateau, Marcory, Yopougon, Bingerville, Angré, Abatta. Nous couvrons aussi les principales villes de Côte d'Ivoire (Yamoussoukro, Bouaké, San Pedro) sur projets d'envergure.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Pourquoi les matériaux TMA Shop sont-ils moins chers qu'à Abidjan ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Nous importons directement depuis les usines (Chine principalement) sans passer par les grossistes ni distributeurs locaux. Cela nous permet d'offrir jusqu'à -40 % vs le marché local, en échange d'un délai de 45 à 50 jours entre commande et livraison.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Est-ce que TMA Holding offre une garantie sur ses constructions ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Oui. Toutes nos constructions neuves bénéficient de la garantie décennale sur le gros œuvre. Nous fournissons également un suivi photo et un rapport de chantier hebdomadaire pour chaque projet.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Combien de temps pour recevoir un devis ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Un conseiller TMA Holding analyse votre demande et vous revient sous 24 h ouvrées avec un pré-chiffrage. Le devis détaillé final arrive en 24 à 48 h, après visite sur place si nécessaire.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       {/* HERO */}
       <HeroSection
         image={IMG.heroHome}
@@ -313,6 +384,87 @@ export default function HomePage() {
             {TESTIMONIALS.map((t, i) => (
               <TestimonialCard key={i} {...t} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ZONES D'INTERVENTION — SEO local */}
+      <section className="py-16 md:py-20 bg-white border-t border-tma-stone">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-start">
+            <div>
+              <p className="text-tma-electric text-xs font-bold tracking-[0.25em] uppercase mb-3">
+                Zones d'intervention
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-tma-night leading-tight mb-4">
+                Nous construisons à Abidjan et dans toute la Côte d'Ivoire.
+              </h2>
+              <p className="text-tma-ash leading-relaxed">
+                Notre siège est à <strong>Cocody Riviera Palmeraie</strong>, au
+                cœur d'Abidjan. Nous intervenons sur l'ensemble du Grand Abidjan
+                et déplaçons nos équipes dans tout le pays pour les projets
+                d'envergure.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-tma-night mb-4">
+                Quartiers d'Abidjan desservis :
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {[
+                  "Cocody",
+                  "Riviera",
+                  "Riviera Palmeraie",
+                  "Riviera Golf",
+                  "Angré",
+                  "Abatta",
+                  "Bingerville",
+                  "Plateau",
+                  "Marcory",
+                  "Zone 4",
+                  "Treichville",
+                  "Yopougon",
+                  "Adjamé",
+                  "Attécoubé",
+                  "Koumassi",
+                  "Port-Bouët",
+                  "Abobo",
+                  "Deux Plateaux",
+                  "II Plateaux",
+                ].map((q) => (
+                  <span
+                    key={q}
+                    className="inline-flex items-center rounded-full bg-tma-stone text-tma-night px-3 py-1 text-xs font-medium"
+                  >
+                    {q}
+                  </span>
+                ))}
+              </div>
+
+              <p className="text-sm font-semibold text-tma-night mb-4">
+                Côte d'Ivoire — projets nationaux :
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Yamoussoukro",
+                  "Bouaké",
+                  "San Pedro",
+                  "Daloa",
+                  "Korhogo",
+                  "Man",
+                  "Grand-Bassam",
+                  "Assinie",
+                ].map((v) => (
+                  <span
+                    key={v}
+                    className="inline-flex items-center rounded-full border border-tma-stone text-tma-night px-3 py-1 text-xs font-medium"
+                  >
+                    {v}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

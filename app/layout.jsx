@@ -85,20 +85,73 @@ export const viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "GeneralContractor",
+  "@type": ["GeneralContractor", "LocalBusiness", "Store"],
+  "@id": "https://tma-holding.net/#organization",
   name: BRAND.name,
+  alternateName: ["TMA Holding", "TMA Shop"],
   description: BRAND.description,
   url: "https://tma-holding.net",
-  telephone: BRAND.phone,
+  logo: "https://tma-holding.net/logo-tma.jpg",
+  image: "https://tma-holding.net/logo-tma.jpg",
+  telephone: [BRAND.phone, BRAND.phoneLocal],
   email: BRAND.email,
+  priceRange: "$$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: BRAND.address.line1,
     addressLocality: BRAND.address.city,
+    addressRegion: "Abidjan",
     addressCountry: "CI",
   },
-  openingHours: "Mo-Sa 08:00-19:00",
-  areaServed: { "@type": "City", name: "Abidjan" },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 5.3522,
+    longitude: -3.9667,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "City", name: "Abidjan" },
+    { "@type": "AdministrativeArea", name: "Côte d'Ivoire" },
+  ],
+  serviceType: [
+    "Construction villa",
+    "Rénovation",
+    "Peinture professionnelle airless",
+    "Enduit mécanique",
+    "Conception 2D et 3D",
+    "Revêtement et finition",
+    "Importation matériaux BTP",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "TMA Shop — Catalogue BTP",
+    itemListElement: [
+      { "@type": "OfferCatalog", name: "Carreaux" },
+      { "@type": "OfferCatalog", name: "Sanitaires" },
+      { "@type": "OfferCatalog", name: "Cuisines modernes" },
+      { "@type": "OfferCatalog", name: "Robinetterie" },
+      { "@type": "OfferCatalog", name: "Matériaux BTP" },
+      { "@type": "OfferCatalog", name: "Équipements de chantier" },
+    ],
+  },
+  sameAs: [
+    BRAND.social.instagram,
+    BRAND.social.facebook,
+    BRAND.social.linkedin,
+  ],
 };
 
 export default function RootLayout({ children }) {
